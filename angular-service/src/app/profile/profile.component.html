@@ -1,0 +1,65 @@
+<body>
+<div class="row">
+  <div class="column1">
+    <div class="w3-container" id="circle">
+      <br>
+      <img src="../../assets/images/t12.jpeg" class="w3-circle" alt="Car" id="photo">
+    </div>
+    <p id="setting"><i class="fas fa-cogs fa-2x"></i></p>
+  </div>
+  <div class="column2" >
+    <br>
+    <br>
+    <h2 id="head">
+      <strong>{{User.username}}</strong></h2>
+    <h4 id="head2"><i>{{User.emailaddress}}</i></h4>
+  </div>
+  <div class="column3">
+    <h4 style="margin-top: 17%;"><u><em>Highlights:-</em></u></h4>
+    <hr style="border: 1px solid white">
+    <h5 style="padding-top: 5px;"> Views<i class="fas fa-eye fa-lg"></i>: {{User.views}}</h5>
+    <h5 style="padding: 5px;margin-top: 0px;">Reputation <i class="fas fa-graduation-cap fa-lg"></i>:{{User.reputation}}</h5>
+    <h5 style="padding: 5px;margin-top: 0px;margin-right: 0px;">Reputation <i class="fas fa-user-friends fa-lg"></i>:Count</h5>
+  </div>
+</div>
+<hr style="border: 1px solid whitesmoke;width: 90%;margin-left: 5%;">
+<div class="row" style="min-height: 70%;margin-left: 8%;margin-right: 8%;margin-bottom: 2%;">
+  <div class="column4">
+      <h4 style="margin-top: 8%;"><em>Knows About:</em></h4>
+      <hr style="border: 1px solid white">
+      <ul *ngFor="let int of User.interests" style="list-style-type: none;">
+        <li style="text-transform: capitalize;">{{int.inter}}</li>
+      </ul>
+      <br>
+    <button type="button" class="btn btn-outline-dark btn-lg btn-block" style="margin-top: 5%;color: white;border-color: white;"
+      (click)="showQuestions()">My Questions</button>
+    <button type="button" class="btn btn-outline-dark btn-lg btn-block" (click)="showAnswers()" style="color: white;border-color: white;">My Answers</button>
+    <button type="button" class="btn btn-outline-dark btn-lg btn-block" (click)="showFollowers()" style="color: white;border-color: white;">My Followers</button> 
+  </div>
+  <div class="column5">
+    <!--information-->
+    <ul *ngIf='value==="My Questions"' style="list-style-type: none;margin-left: 0px;padding: 0px;">
+      <ul *ngFor="let question of User.questions" style="list-style-type: none;padding: 2px;">
+        <li style="margin-left: 0px;">
+          <app-my-questions [in]="question"></app-my-questions>
+        </li>
+      </ul>
+    </ul>
+    <ul *ngIf='value==="My Answers"' style="list-style-type: none;margin-left: 0px;padding: 0px;">
+      <ul *ngFor="let answer of User.answers" style="list-style-type: none;padding: 2px;">
+        <li style="margin-left: 0px;">
+          <app-my-answers [in]="answer"></app-my-answers>
+        </li>
+      </ul>
+    </ul>
+  </div>
+  <div class="column6">
+    <!-- <h4 style="margin-top: 8%;"><em>Knows About:</em></h4>
+    <hr style="border: 1px solid white">
+    <ul *ngFor="let int of User.interests" style="list-style-type: none;">
+      <li>{{int}}</li>
+    </ul> -->
+  </div>
+</div>
+</body>
+<!--views   reputation  followers -->

@@ -1,0 +1,22 @@
+<mat-card class="example-card waves-effect waves-light" routerLink="/questionAnswerCard" (click)="getOtherDataModel()"
+  id="some">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Question</mat-card-title>
+    <mat-card-subtitle>{{in.question}}</mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+  <mat-card-content>
+    <p><em>Answer:</em></p>
+    <ul *ngFor="let answer of in.answers">
+      <p>{{answer.answer}}</p>
+      <mat-card-content>
+        <pre><i class="fas fa-thumbs-up"></i>{{answer.upvotes}}<div style="padding: 10px;display: inline-block;"></div><i class="fas fa-eye"></i>{{answer.views}}<div style="padding: 10px;display: inline-block;"></div><i class="fas fa-clock"></i>{{answer.timestamp}}</pre>
+      </mat-card-content>
+    </ul>
+  </mat-card-content>
+  <!-- <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/questionAnswerCard" (click)="put()">Show more</button>
+    </mat-card-actions> -->
+</mat-card>
+<router-outlet></router-outlet>

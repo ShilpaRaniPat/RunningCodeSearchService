@@ -1,0 +1,47 @@
+nav{
+    max-width: 100%;
+}
+
+div{
+    padding-left: 5px;
+    top: 0px;
+    margin: 0x;
+}
+
+.w3-container{
+    bottom: 0px;
+    padding: 0x;
+    margin: 0x;
+}
+.dropdown-menu{
+    margin-top:50px;
+    width:250px;
+    
+}
+img{
+    bottom: 0px;
+    padding: 0x;
+    margin: 0x;
+}
+button:hover{
+    color: white;
+}
+button{
+    color: black;
+}
+.biglist{
+    list-style-type:none;
+    padding:1px;
+    margin-right: -1px;
+    width: 100%;
+}
+@media screen and (max-width: 600px){
+    pre{
+        margin: -12px;
+    }
+    .dropdown-menu{
+        margin-top:10px;
+        width:100%;
+        
+    }
+}

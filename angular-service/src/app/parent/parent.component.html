@@ -1,0 +1,8 @@
+<ul *ngFor='let x of variable.questions' id="mydiv">
+    <!-- <ol>
+        <ul *ngFor='let y of x.answers'  >
+            <app-child [title]=x.question [description]=x.description [upvote]=x.upvotes [downvote]=x.downvote [answer]=y.answer [view]=y.views></app-child>
+        </ul>
+    </ol> -->
+    <app-child [question]=x></app-child>
+</ul>

@@ -1,0 +1,295 @@
+version: "2.1"
+services:
+
+  apigateway:
+    image: zuul-service
+    build: zuul-gatewayservice/
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      - eurekaserver
+    ports:
+      - 8092:8092
+    expose:
+      - 8092
+    healthcheck:
+      test: "exit 0"
+
+  eurekaserver:
+    image: eureka-service:latest
+    build: eureka-server/
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8093:8093
+    expose:
+      - 8093
+    healthcheck:
+      test: "exit 0"
+
+  mongo:
+    image: mongo:3.4-jessie
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    container_name: mongo_docker
+    network_mode: host
+    hostname: localhost
+    restart: always
+    volumes:
+      - /DB/mongo:/data/db
+    healthcheck:
+      test: "exit 0"
+
+  neo4j:
+    image: neo4j:latest
+    ports:
+      - 7474:7474
+      - 7687:7687
+    expose:
+      - 7474
+    container_name: neo4j_docker
+    network_mode: host
+    hostname: localhost
+    restart: always
+    volumes:
+      - /DB/neo4j:/data/db
+    healthcheck:
+      test: "exit 0"
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    expose:
+      - 3306
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: userlogin
+      MYSQL_PASSWORD: root123
+      MYSQL_USER: root
+    network_mode: "host"
+    hostname: localhost
+    restart: always
+    volumes:
+      - /DB/mysql:/var/lib/mysql
+    healthcheck:
+      test: "exit 0"
+
+  rabbitmq:
+    image: rabbitmq:latest
+    container_name: rabbitmqcontainer
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 5672:5672
+    expose:
+      - 5672
+    restart: always
+    healthcheck:
+      test: "exit 0"
+
+  user-authentication-service:
+    image: user-authentication-service
+    build: ./user-authentication-service/
+    container_name: login_docker
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mysql:
+        condition: service_healthy
+      #            apigateway:
+      #              condition: service_healthy
+      #            eurekaserver:
+      #              condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    ports:
+      - 8084:8084
+    expose:
+      - 8084
+    healthcheck:
+      test: "exit 0"
+
+  user-profile-service:
+    image: user-profile-service
+    build: ./user-profile-service/
+    container_name: reg_docker
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    ports:
+      - 8086:8086
+    expose:
+      - 8086
+    healthcheck:
+      test: "exit 0"
+
+  notification-service:
+    image: notification-service
+    build: ./notification-service/
+    container_name: notification_docker
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+      - 8010:8010
+    expose:
+      - 8010
+    healthcheck:
+      test: "exit 0"
+
+  nlp-service:
+    image: nlp-service
+    build: ./nlp-service/
+    container_name: nlp_docker
+    restart: always
+    network_mode: host
+    hostname: localhost
+    ports:
+    - 8070:8070
+    expose:
+    - 8070
+    healthcheck:
+      test: "exit 0"
+
+  question-answer-service:
+    image: question-answer-service
+    build: ./question-answer-service/
+    container_name: ques_docker
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      apigateway:
+        condition: service_healthy
+      eurekaserver:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    ports:
+      - 8090:8090
+    expose:
+      - 8090
+    healthcheck:
+      test: "exit 0"
+
+  recommendation-query-service:
+    image: recommendation-query-service
+    build: ./recommendation-query-service/
+    container_name: recommendation-query_docker
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      neo4j:
+        condition: service_healthy
+      mongo:
+        condition: service_healthy
+    ports:
+      - 8081:8081
+    expose:
+      - 8081
+    healthcheck:
+      test: "exit 0"
+
+  angular-app:
+    build: angular-service/
+    image: angular
+    restart: always
+    mem_limit: 1024m
+    container_name: Angular
+    network_mode: "host"
+    hostname: localhost
+    ports:
+      - 8000:8000
+    healthcheck:
+      test: "exit 0"
+    expose:
+      - 8000
+
+  recommendation-command-service:
+    build: ./recommendation-command-service/
+    image: recommendation-command-service
+    container_name: recommendation-command_docker
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      neo4j:
+        condition: service_healthy
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+    healthcheck:
+      test: "exit 0"
+  search-service:
+    image: search-service
+    build: ./search-service/
+    container_name: search_docker
+    restart: always
+    network_mode: host
+    hostname: localhost
+    depends_on:
+      mongo:
+        condition: service_healthy
+      #    apigateway:
+      #      condition: service_healthy
+      #    eurekaserver:
+      #      condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+      nlp-service:
+        condition: service_healthy
+    ports:
+      - 8099:8099
+    expose:
+      - 8099
+    healthcheck:
+      test: "exit 0"
+
+#  json-server1:
+#    container_name: json-server1
+#    image: clue/json-server
+#    volumes:
+#      - ${DIR}/trendingQues.json:/data/db.json
+#    ports:
+#      - 8050:80
+#
+#  json-server2:
+#    container_name: json-server2
+#    image: clue/json-server
+#    volumes:
+#      - ${DIR}/unansweredQues.json:/data/db.json
+#    ports:
+#      - 8051:80
+#
+#  json-server3:
+#    container_name: json-server3
+#    image: clue/json-server
+#    volumes:
+#      - ${DIR}/User.json:/data/db.json
+#    ports:
+#      - 8052:80
+#    healthcheck:
+#      test: "exit 0"
+
+
+

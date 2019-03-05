@@ -1,0 +1,51 @@
+
+  <mat-card class="my-card" #signupForm>
+    <mat-toolbar style="background-color:#06B5D3;">
+       <p>Registration</p>
+    </mat-toolbar>
+       <mat-card-content>
+          <form class="my-form">
+             <mat-form-field class="full-width">
+                <mat-label>First Name</mat-label>
+                <input matInput placeholder="First name (not more than 14 characters)" [formControl]="FirstName" required minlength="3" maxlength="14">
+                <mat-error *ngIf="FirstName.invalid">{{getErrorFnameMessage()}}</mat-error>
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>Last Name</mat-label>
+                <input matInput placeholder="Last Name" [formControl]="LastName">
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>Email</mat-label>
+                <input matInput placeholder="email" [formControl]="email" required>
+                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+             </mat-form-field>
+  
+             <mat-form-field class="full-width">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Password(Min lenght of 8)" [formControl]="password" minlength="8" maxlength="15">
+                <mat-error *ngIf="password.invalid">{{getpassErrorMessage()}}</mat-error>
+             </mat-form-field>
+             <mat-form-field class="full-width">
+                <mat-label>ConfirmPassword</mat-label>
+                <input matInput type="password" placeholder="Confirm New Password" [formControl]="confirm" required>
+             </mat-form-field>
+             <mat-label *ngIf=confirm.value class="password">{{getconfirmErrorMessage()}}</mat-label>
+             <mat-form-field class="full-width">
+                <mat-label>Interests</mat-label>
+                <mat-select placeholder="Toppings" [formControl]="toppings" multiple>
+                   <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                </mat-select>
+             </mat-form-field>
+       <mat-card-actions>
+          <button mat-raised-button *ngIf="password.value!=confirm.value" [disabled]='true' (click)="register()" color="primary">Register</button>
+          <button mat-raised-button *ngIf="password.value==confirm.value" (click)="register()" color="primary" enabled>Register</button>
+          <button mat-raised-button (click)="backToLogin()" color="primary">Cancel</button>
+       </mat-card-actions>
+     
+       <!-- <a href='auth/login'>cancel</a> -->
+       <!-- <mat-card-actions>
+          <button mat-raised href='auth/login'></button>
+       </mat-card-actions> -->
+    </form>
+     </mat-card-content>
+    </mat-card>

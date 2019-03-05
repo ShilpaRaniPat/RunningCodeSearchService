@@ -1,0 +1,40 @@
+.cent{
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+
+form{
+    padding: 40px;
+    color: white;
+}
+body{
+    max-width: 100%;
+     background: url('../../assets/images/back.jpg'); 
+    background-attachment: fixed;
+    background-size: cover;
+    max-height: 100%;
+}
+button:hover{
+    color: white;
+}
+button{
+    color: black;
+}
+
+.biglist{
+    list-style-type:none;
+    padding:-4px;
+    margin-right: -18px;
+    width: 100%;
+
+}
+
+
+@media screen and (max-width: 600px){
+
+}
+
+
+
+

@@ -1,0 +1,17 @@
+#some{
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    transform: scale(1,1);
+    transition: transform 0.2s ease-in;
+    border: 2px solid gray;
+}
+
+#some:hover { 
+    border: 2px solid white;
+transform: scale(1.02,1.02);
+    transition: transform 0.4s ease-out;
+}
+
+mat-card-title,mat-card-subtitle,p,mat-card-content,i,div,pre,ul{
+    color: white;
+}

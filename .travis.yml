@@ -1,0 +1,18 @@
+language: java
+jdk: openjdk11
+cache:
+  directories:
+    - "$HOME/.m2/repository"
+# addons:
+#   sonarcloud:
+#     organization: "stackroute" # the key of the org you chose at step #3
+#     token:
+#       secure: 31986319aebdbf260cc6f9afeb5527d8e2ed2c2b
+# script:
+#   mvn sonar:sonar \
+#   -Dsonar.projectKey=stackroute_boeing-wave4-eroteme \
+#   -Dsonar.organization=stackroute \
+#   -Dsonar.host.url=https://sonarcloud.io \
+#   -Dsonar.login=31986319aebdbf260cc6f9afeb5527d8e2ed2c2b
+after_success:
+  - bash <(curl -s https://codecov.io/bash)

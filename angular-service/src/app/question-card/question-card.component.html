@@ -1,0 +1,17 @@
+
+<mat-card class="example-card waves-effect waves-light" routerLink="/questionAnswerCard" (click)="put()" id="some">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title style="font-size: medium"><u>Asked By</u>: {{passedQuestions.user.firstname}}</mat-card-title>
+    <mat-card-subtitle>{{passedQuestions.question}}</mat-card-subtitle>
+  </mat-card-header>
+  <!-- <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+  <mat-card-content id="card">
+    <p class="replyMessage">{{desc}}</p>
+  </mat-card-content>
+  <mat-card-content style="position: relative;"><pre><i class="fas fa-thumbs-up"></i> {{passedQuestions.upvote}}<div style="padding: 10px;display: inline-block;"></div><i class="fas fa-thumbs-down"></i> {{passedQuestions.downvote}}  <span style="font-size:medium;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">Answers number:</span>{{size}}</pre></mat-card-content>
+  <mat-card-actions id="butt">
+    <button mat-raised-button color="primary" routerLink="/questionAnswerCard" (click)="put()">Show more</button>
+  </mat-card-actions>
+</mat-card>
+<router-outlet></router-outlet>

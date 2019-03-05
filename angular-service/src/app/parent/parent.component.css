@@ -1,0 +1,14 @@
+#mydiv{
+    display: inline-flex;
+    padding-left:3px;
+    padding-right: 5px;
+    list-style-type: none;
+        }
+        
+        @media screen and (max-width: 600px) {
+            ul{
+                display: inline-flex;
+                list-style-type: none;
+                margin-left: 0%;
+            }
+        } 

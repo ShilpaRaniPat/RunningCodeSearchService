@@ -1,0 +1,82 @@
+body{
+    background:url('../../assets/images/post.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    max-height: 100%;
+    margin-top: -1%;
+    max-width: 100%;
+}
+
+.badges{
+    margin-top: 0%;
+    margin-left: 8%;
+}
+
+.chip {
+    display: table-cell;
+    padding: 0 25px;
+    height: 45px;
+    font-size: 16px;
+    line-height: 45px;
+    border-radius: 25px;
+    background-color: white;
+    color: black;
+    margin-left: 1%;
+    margin-top: 1%;
+    transform: scale(1,1);
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+  }
+  
+  .chip img {
+    float: left;
+    margin: 1px 4px 0px -15px;
+    height: 44px;
+    width: 43px;
+    border-radius:45%;
+  }
+
+#division{
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    color: white;
+    background-color: rgba(red, green, blue, alpha)
+}
+
+#question{
+    width: 80%;
+    margin-left: 10%;
+    font-size: 30px;
+}
+
+#description{
+    margin-left: 10%;
+    width: 80%;
+    margin-top: 8%;
+}
+
+#butt{
+    margin-left: 17%;
+    width: 70%;
+}
+
+.chip:hover{
+    transform: scale(0.9,0.9);
+    background-color: rgb(86, 194, 194);
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+
+}
+
+@media screen and (max-width: 600px) {
+    #butt{
+        margin-left: 0%;
+        width: 100%;
+    }
+
+    .badges{
+        margin-top: 0%;
+        margin-left:-5%;
+    }
+}

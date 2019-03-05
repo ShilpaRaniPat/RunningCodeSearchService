@@ -1,0 +1,170 @@
+<!-- <pre><img src="{{present.user.imageurl}}"/><h3>{{present.question}}</h3></pre> -->
+
+<body>
+    <br>
+    <div id="bord">
+        <div class="container">
+            <div class="w3-container" id="circle">
+                <br>
+                <img src="../../assets/images/bob.jpg" class="w3-circle" alt="Car" id="photo"><span class="spaci"></span>By:{{present.user.firstname}}
+              </div>
+            <h6 id="ron"><i class="fas fa-calendar-alt"></i>:{{present.timestamp}}</h6>
+            <br>
+            <h3>{{present.question}}</h3>
+        </div>
+        <div class="container"><u>Topics:</u></div>
+        <ul class="container" *ngFor="let topic of present.topics" style="display: inline-block"><li>{{topic}}</li></ul>
+        <h4 class="votes1"><em>Description:</em><br>
+            <h5>{{present.description}}</h5>
+        </h4>
+
+        <h6 class="votes"><span class="space">Upvotes:</span>{{vote}}<span class="space"><i
+                    class="fas fa-angle-double-up"></i></span></h6>
+        <pre
+            id="space1"><button type="button" class="btn btn-success" (click)="upvoteQuestion()"><strong>Upvote</strong></button> <button type="button" class="btn btn-danger" (click)="downvoteQuestion()"><strong>Downvote</strong></button></pre>
+        <div class="input-group mb-3" style="width: 90%;margin-left: 5%;">
+            <input type="text" class="form-control" id="butt" placeholder="Enter comments here" aria-label="Enter comments here"
+                aria-describedby="basic-addon2" name="questionComm" [(ngModel)]="questionComm">
+            <div>
+                <button type="button" class="btn btn-dark" (click)="commentQuestion()">Add Comments</button>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-dark" style="float: right;"
+            (click)="toggle1()">{{showAllCommentsQuestion}}</button>
+            <br>
+        <div id="baap">
+            <ul *ngIf="showAllCommentsQuestion==='Hide Details'" id="smaller">
+                <ul *ngFor="let first1 of present.comments" id="comment">
+                    <h5><u><em>Comment:</em></u>
+                        <pre
+                            id="this"><h5>By:{{first1.user.firstname}}</h5><i class="fas fa-user-clock"></i><h6>{{first1.timestamp}}</h6></pre>
+                    </h5>
+                    <li>{{first1.comment}}</li>
+                    <li><i class="fas fa-heart"></i>{{first1.likes}}</li>
+                    <br>
+                    <br>
+                    <ul *ngFor='let second1 of first1.replies' id="reply">
+                        <h6><u><em>Replies:</em></u></h6>
+                        <li id="replies">By:{{second1.user.firstname}}</li>
+                        <li>Reply:{{second1.reply}}</li>
+                        <li><i class="far fa-clock"></i>:{{second1.timestamp}}<i
+                                class="far fa-heart"></i>:{{second1.likes}}</li>
+                        <!-- <li>{{third.user.imageurl}} By:{{third.user.firstname}}</li> -->
+                    </ul>
+                    <!-- <li>{{second.user.imageurl}} By:{{second.user.firstname}}</li> -->
+                    <button type="button" class="btn btn-outline-dark" (click)="putval(first1.comment)">Reply</button>
+                    <ul *ngIf="comm==first1.comment">
+                        <form class="form-inline my-2 my-lg-0" *ngIf="val">
+                            <input class="form-control mr-sm-2" type="text" placeholder="Reply to this comment"
+                                aria-label="Reply to this comment" name="QuestionCommentReply" [(ngModel)]="QuestionCommentReply">
+                            <button type="button" class="btn btn-outline-success" (click)="replyQuestionComment(first1.comment)">Click
+                                here to reply</button>
+                        </form>
+                    </ul>
+                </ul>
+            </ul>
+            <!-- <hr style="margin-right: 10%; border: 1px solid black;" /> -->
+            <br>
+            <br>
+            <!-- <div class="form-group">
+                <br>
+                <br>
+                <label for="exampleInputEmail1">Question:</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter your Question here" style="height: 40px;">
+            </div> -->
+            <form>
+                <div class="form-group" style="margin-right: 8%;">
+                  <label for="exampleFormControlTextarea1" style="font-size: 20px;">Post the answer below:</label>
+                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="6" placeholder="Enter your answer here......." name="answer" [(ngModel)]="answer"></textarea>
+                </div>
+              </form>
+            <div class="input-group mb-3">
+                <!-- <input type="text" class="form-control" placeholder="Write your" aria-label="Recipient's username" aria-describedby="basic-addon2"> -->
+                <div class="input-group-append">
+                    <button type="button" class="btn btn-dark" (click)="postanswer()" style="float:right">Post your own answer</button>
+                </div>
+              </div>
+              <br>
+              <br>
+              <br>
+            <ul *ngFor='let first of present.answers' id="ans">
+                <h3><u><em>Answer:</em></u>
+                    <pre id="this"><h4>By:{{first.user.firstname}}</h4></pre>
+                </h3>
+                <li>{{first.answer}}</li>
+                <!-- <li>{{first.user.imageurl}} By:{{First.user.firstname}}</li> -->
+                <li>By:{{first.user.firstname}}</li>
+                <li>
+                    <!-- <pre>Upvote:{{first.upvotes}}<button type="button" class="btn btn-outline-success spacing"> Upvote!!</button></pre> -->
+                    <mat-chip-list>
+                        Upvote:{{first.upvotes}}
+                        <mat-chip color="primary" selected (click)="upvoteAnswer(first.answer)">Upvote It!</mat-chip>
+                        <!-- Downvote:{{first.downvote}} -->
+                        <!-- <mat-chip color="accent" selected>Downvote</mat-chip> -->
+                    </mat-chip-list>
+                </li>
+                <li>
+                    <!-- <pre>Downvote:{{first.downvote}}<button type="button" class="btn btn-outline-danger spacing">Downvote</button></pre> -->
+                    <mat-chip-list>
+                        <!-- <mat-chip color="primary" selected>Upvote</mat-chip> -->
+                        Downvote:{{first.downvote}}
+                        <mat-chip color="accent" selected (click)="downvoteAnswer()">Downvote</mat-chip>
+                    </mat-chip-list>
+                </li>
+                <li> <i class="fas fa-eye"></i>{{first.views}} <i class="fas fa-clock"></i>{{first.timestamp}}</li>
+                <br>
+                <li>
+                    <div class="input-group mb-3">
+                        <input type="text" id="butt2" class="form-control" placeholder="Enter comments here"
+                            aria-label="Enter comments here" aria-describedby="basic-addon2" name="commentAnswer1" [(ngModel)]="commentAnswer1">
+                        <div class="input-group-append">
+                            <button type="button" class="btn btn-dark" (click)="commentAnswer(first.answer)">Add Comments</button>
+                        </div>
+                    </div>
+                </li>
+                <br>
+                <button type="button" class="btn btn-dark" (click)="toggle(first.answer)"
+                    id="viewMore">View More</button>
+                <ul *ngIf="first.answer==ans" id="divide">
+                    <ul *ngIf="showAllCommentsAnswer==='Hide Details'" id="divide1">
+                        <ul *ngFor="let second of first.comments" id="comment1">
+                            <h5><u><em>Comment:</em></u>
+                                <pre
+                                    id="this"><h5>By:{{second.user.firstname}}</h5><i class="fas fa-user-clock"></i><h6>{{second.timestamp}}</h6></pre>
+                            </h5>
+                            <li>{{second.comment}}</li>
+                            <li><i class="fas fa-heart"></i>{{second.likes}}</li>
+                            <br>
+                            <br>
+                            <ul *ngFor='let third of second.replies' id="border">
+                                <h6><u><em>Replies:</em></u></h6>
+                                <li id="reply1">By:{{third.user.firstname}}</li>
+                                <li>Reply:{{third.reply}}</li>
+                                <li><i class="far fa-clock"></i>:{{third.timestamp}}<i
+                                        class="far fa-heart"></i>:{{third.likes}}</li>
+                                <!-- <li>{{third.user.imageurl}} By:{{third.user.firstname}}</li> -->
+                            </ul>
+                            <br>
+                            <!-- <li>{{second.user.imageurl}} By:{{second.user.firstname}}</li> -->
+                            <button type="button" class="btn btn-outline-dark"
+                                (click)="putval1(second.comment)">Reply</button>
+                            <ul *ngIf="comm1==second.comment">
+                                <form class="form-inline my-2 my-lg-0" *ngIf="val1">
+                                    <input class="form-control mr-sm-2" type="text" placeholder="Reply to this comment"
+                                        aria-label="Reply to this comment" name="replyanswercomment" [(ngModel)]="replyanswercomment">
+                                    <button type="button" class="btn btn-outline-success"
+                                        (click)="replyAnswerComment(first.answer,second.comment)">Click here to reply</button>
+                                </form>
+                            </ul>
+                        </ul>
+                    </ul>
+                </ul>
+                <br>
+                <br>
+                <br>
+            </ul>
+        </div>
+    </div>
+</body>

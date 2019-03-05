@@ -1,0 +1,522 @@
+{"User":{
+	"username": "Amrit",
+	"emailaddress": "amrit96pal@gmail.com",
+	"reputation": 500,
+	"interests": [{"inter":"apna time aega"},{"inter":"bolo azaadi"},{"inter":"random"},{"inter":"bullshit"}],
+	"views": 12,
+	"questions": [{
+			"question": "string",
+			"answers": [{
+				"answer": "string",
+				"accepted": true,
+				"comments": [{
+					"comment": "string",
+					"timestamp": 123,
+					"likes": 12,
+					"replies": [{
+						"reply": "string",
+						"likes": 12,
+						"timestamp": 123,
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": ""
+						}
+					}],
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				}],
+				"upvotes": 12,
+				"views": 1223,
+				"timestamp": 434,
+				"user": {
+					"firstname": "string",
+					"emailaddress": "string",
+					"imageurl": "string"
+				}
+			}],
+			"upvotes": 12,
+			"timestamp": 134134,
+			"downvote": 12,
+			"description": "string",
+			"comments": [{
+				"comment": "string",
+				"timestamp": 123,
+				"likes": 33,
+				"replies": [{
+					"reply": "string",
+					"likes": 98,
+					"timestamp": 123
+				}]
+			}],
+			"user": {
+				"firstname": "string",
+				"emailaddress": "string",
+				"imageurl": "string"
+			}
+		},
+
+		{
+			"question": "string",
+			"answers": [{
+				"answer": "string",
+				"accepted": true,
+				"comments": [{
+					"comment": "string",
+					"timestamp": 123,
+					"likes": 12,
+					"replies": [{
+						"reply": "string",
+						"likes": 12,
+						"timestamp": 123,
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": ""
+						}
+					}],
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				}],
+				"upvotes": 12,
+				"views": 1223,
+				"timestamp": 434,
+				"user": {
+					"firstname": "string",
+					"emailaddress": "string",
+					"imageurl": "string"
+				}
+			}],
+			"upvotes": 12,
+			"timestamp": 134134,
+			"downvote": 12,
+			"description": "string",
+			"comments": [{
+				"comment": "string",
+				"timestamp": 123,
+				"likes": 33,
+				"replies": [{
+					"reply": "string",
+					"likes": 98,
+					"timestamp": 123
+				}]
+			}],
+			"user": {
+				"firstname": "string",
+				"emailaddress": "string",
+				"imageurl": "string"
+			}
+		},
+
+		{
+			"question": "string",
+			"answers": [{
+				"answer": "string",
+				"accepted": true,
+				"comments": [{
+					"comment": "string",
+					"timestamp": 123,
+					"likes": 12,
+					"replies": [{
+						"reply": "string",
+						"likes": 12,
+						"timestamp": 123,
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": ""
+						}
+					}],
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				}],
+				"upvotes": 12,
+				"views": 1223,
+				"timestamp": 434,
+				"user": {
+					"firstname": "string",
+					"emailaddress": "string",
+					"imageurl": "string"
+				}
+			}],
+			"upvotes": 12,
+			"timestamp": 134134,
+			"downvote": 12,
+			"description": "string",
+			"comments": [{
+				"comment": "string",
+				"timestamp": 123,
+				"likes": 33,
+				"replies": [{
+					"reply": "string",
+					"likes": 98,
+					"timestamp": 123
+				}]
+			}],
+			"user": [{
+				"firstname": "string",
+				"emailaddress": "string",
+				"imageurl": "string"
+			}]
+		}
+	],
+	"answers": [{
+			"question": "string",
+			"answers": [{
+					"answer": "sefv evrv  tring",
+					"accepted": false,
+					"comments": [{
+						"comment": "string",
+						"timestamp": 32434,
+						"likes": 213,
+						"replies": [{
+							"reply": "string",
+							"likes": 13,
+							"timestamp": 123,
+							"user": {
+								"firstname": "string",
+								"emailaddress": "string",
+								"imageurl": "string"
+							}
+						}],
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": "string"
+						}
+					}],
+					"upvotes": 134,
+					"views": 13,
+					"timestamp": 134,
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				},
+				{
+					"answer": "strisdcvf eng",
+					"accepted": false,
+					"comments": [{
+						"comment": "string",
+						"timestamp": 32434,
+						"likes": 213,
+						"replies": [{
+							"reply": "string",
+							"likes": 13,
+							"timestamp": 123,
+							"user": {
+								"firstname": "string",
+								"emailaddress": "string",
+								"imageurl": "string"
+							}
+						}],
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": "string"
+						}
+					}],
+					"upvotes": 134,
+					"views": 13,
+					"timestamp": 134,
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				}
+			],
+			"upvotes": 12,
+			"timestamp": 134134,
+			"downvote": 12,
+			"description": "string",
+			"comments": [{
+				"comment": "string",
+				"timestamp": 123,
+				"likes": 33,
+				"replies": [{
+					"reply": "string",
+					"likes": 98,
+					"timestamp": 123
+				}]
+			}],
+			"user": {
+				"firstname": "string",
+				"emailaddress": "string",
+				"imageurl": "string"
+			}
+		},
+		{
+			"question": "string",
+			"answers": [{
+					"answer": "strfrercing",
+					"accepted": false,
+					"comments": [{
+						"comment": "string",
+						"timestamp": 32434,
+						"likes": 213,
+						"replies": [{
+							"reply": "string",
+							"likes": 13,
+							"timestamp": 123,
+							"user": {
+								"firstname": "string",
+								"emailaddress": "string",
+								"imageurl": "string"
+							}
+						}],
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": "string"
+						}
+					}],
+					"upvotes": 134,
+					"views": 13,
+					"timestamp": 134,
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				},
+				{
+					"answer": "string",
+					"accepted": false,
+					"comments": [{
+						"comment": "string",
+						"timestamp": 32434,
+						"likes": 213,
+						"replies": [{
+							"reply": "string",
+							"likes": 13,
+							"timestamp": 123,
+							"user": {
+								"firstname": "string",
+								"emailaddress": "string",
+								"imageurl": "string"
+							}
+						}],
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": "string"
+						}
+					}],
+					"upvotes": 134,
+					"views": 13,
+					"timestamp": 134,
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				}
+			],
+			"upvotes": 12,
+			"timestamp": 134134,
+			"downvote": 12,
+			"description": "string",
+			"comments": [{
+				"comment": "string",
+				"timestamp": 123,
+				"likes": 33,
+				"replies": [{
+					"reply": "string",
+					"likes": 98,
+					"timestamp": 123
+				}]
+			}],
+			"user": {
+				"firstname": "string",
+				"emailaddress": "string",
+				"imageurl": "string"
+			}
+		},
+		{
+			"question": "string",
+			"answers": [{
+					"answer": "string",
+					"accepted": false,
+					"comments": [{
+						"comment": "string",
+						"timestamp": 32434,
+						"likes": 213,
+						"replies": [{
+							"reply": "string",
+							"likes": 13,
+							"timestamp": 123,
+							"user": {
+								"firstname": "string",
+								"emailaddress": "string",
+								"imageurl": "string"
+							}
+						}],
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": "string"
+						}
+					}],
+					"upvotes": 134,
+					"views": 13,
+					"timestamp": 134,
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				},
+				{
+					"answer": "string",
+					"accepted": false,
+					"comments": [{
+						"comment": "string",
+						"timestamp": 32434,
+						"likes": 213,
+						"replies": [{
+							"reply": "string",
+							"likes": 13,
+							"timestamp": 123,
+							"user": {
+								"firstname": "string",
+								"emailaddress": "string",
+								"imageurl": "string"
+							}
+						}],
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": "string"
+						}
+					}],
+					"upvotes": 134,
+					"views": 13,
+					"timestamp": 134,
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				}
+			],
+			"upvotes": 12,
+			"timestamp": 134134,
+			"downvote": 12,
+			"description": "string",
+			"comments": [{
+				"comment": "string",
+				"timestamp": 123,
+				"likes": 33,
+				"replies": [{
+					"reply": "string",
+					"likes": 98,
+					"timestamp": 123
+				}]
+			}],
+			"user": {
+				"firstname": "string",
+				"emailaddress": "string",
+				"imageurl": "string"
+			}
+		},
+		{
+			"question": "string",
+			"answers": [{
+					"answer": "string",
+					"accepted": false,
+					"comments": [{
+						"comment": "string",
+						"timestamp": 32434,
+						"likes": 213,
+						"replies": [{
+							"reply": "string",
+							"likes": 13,
+							"timestamp": 123,
+							"user": {
+								"firstname": "string",
+								"emailaddress": "string",
+								"imageurl": "string"
+							}
+						}],
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": "string"
+						}
+					}],
+					"upvotes": 134,
+					"views": 13,
+					"timestamp": 134,
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				},
+				{
+					"answer": "string",
+					"accepted": false,
+					"comments": [{
+						"comment": "string",
+						"timestamp": 32434,
+						"likes": 213,
+						"replies": [{
+							"reply": "string",
+							"likes": 13,
+							"timestamp": 123,
+							"user": {
+								"firstname": "string",
+								"emailaddress": "string",
+								"imageurl": "string"
+							}
+						}],
+						"user": {
+							"firstname": "string",
+							"emailaddress": "string",
+							"imageurl": "string"
+						}
+					}],
+					"upvotes": 134,
+					"views": 13,
+					"timestamp": 134,
+					"user": {
+						"firstname": "string",
+						"emailaddress": "string",
+						"imageurl": "string"
+					}
+				}
+			],
+			"upvotes": 12,
+			"timestamp": 134134,
+			"downvote": 12,
+			"description": "string",
+			"comments": [{
+				"comment": "string",
+				"timestamp": 123,
+				"likes": 33,
+				"replies": [{
+					"reply": "string",
+					"likes": 98,
+					"timestamp": 123
+				}]
+			}],
+			"user": {
+				"firstname": "string",
+				"emailaddress": "string",
+				"imageurl": "string"
+			}
+		}
+	]
+}
+}

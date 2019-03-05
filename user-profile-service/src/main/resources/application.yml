@@ -1,0 +1,24 @@
+server:
+#  context-path: /user
+    port: 8086
+spring:
+    application:
+        name: BootMongo
+    data:
+        mongodb:
+            database: signup
+            host: localhost
+            port: 27017
+    rabbitmq:
+            host: localhost
+            port: 5672
+jsh:
+    rabbitmq:
+        queue: jsh.queuereg
+        exchange: jsh.directreg
+        routingkey: jsh.routingkeyreg
+jsf:
+    rabbitmq:
+        queue: jsf.queuereg
+        exchange: jsf.directreg
+        routingkey: jsf.routingkeyreg

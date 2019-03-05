@@ -1,0 +1,78 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <!--Here below is the image of the website-->
+  <a class="navbar-brand" href="#">
+    <div class="w3-container">
+      <img src="../../assets/images/t5.jpeg" class="w3-circle" alt="Logo" style="width:40px">
+    </div>
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <pre id="rep">                        </pre>
+      <form class="form-inline my-2 my-lg-0">
+        <input type="text" class="form-control" type="search" name="value" [(ngModel)]="value" placeholder="Search"
+          aria-label="Search" size="46">
+        <pre></pre><button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="putSearchVal()"
+          routerLink="/searchresult">Search</button>
+      </form>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <ul class="navbar-nav mr-auto">
+
+
+        <li class="nav-item active" *ngIf="check1">
+
+          <div class="dropdown" >
+              <button   class="btn btn-dark dropdown-toggle" data-toggle="dropdown" (click)=myfunction()>
+                  <i class="far fa-bell" style="color: white;"></i>
+                  <span class="badge" style="color: white;">{{length1}}</span>
+              </button>
+              <div class="dropdown-menu" >
+                <div id="myDropdown" class="dropdown-content">
+                    <ul class="biglist">
+                      <li style="margin-left: 24%;"><strong><u>Notifications</u></strong></li>
+                      <li>
+                        <ul *ngIf='data' style="list-style-type: none;padding: 0px;margin-left: -9%;width: 100%;">
+                          <li *ngFor='let d of data'>
+                            <app-notify [notification]=d></app-notify>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+              </div>
+            
+            </div>
+         
+      </li>
+
+
+        <pre> </pre>
+        <li class="nav-item active" *ngIf="check1">
+          <a class="nav-link" routerLink="/myprofile">My Profile <span class="sr-only">(current)</span></a>
+        </li>
+        <pre> </pre>
+        <li>
+          <button type="button" class="btn btn-outline-light" *ngIf="check1" (click)="logout()">LogOut</button>
+        </li>
+        <li>
+          <button type="button" class="btn btn-outline-light" *ngIf="!check1" routerLink="/login">Login</button>
+        </li>
+        <pre> </pre>
+        <li>
+          <button type="button" class="btn btn-outline-light" *ngIf="!check1" routerLink="/register">Sign Up</button>
+        </li>
+      </ul>
+    </form>
+  </div>
+</nav>
+<br>
+<br>
+
+<router-outlet></router-outlet>

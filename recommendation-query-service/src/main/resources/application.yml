@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  data:
+    mongodb:
+      database: documents
+      host: localhost
+      port: 27017
+    neo4j:
+      password: secret
+      username: neo4j
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+jsa:
+  rabbitmq:
+    queue: jsa.queue1
+    exchange: jsa.direct1
+    routingkey: jsa.routingkey1
+questionAndAnswerUrl: http://localhost:8090/api/v1/

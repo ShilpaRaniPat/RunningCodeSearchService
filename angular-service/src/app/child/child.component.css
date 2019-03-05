@@ -1,0 +1,150 @@
+.example-card {
+    max-width: 300px;
+    height: 300px;
+          }
+
+  #some {
+        max-width: 300px;
+        min-height: 300px;
+        max-height: 350px;
+        text-overflow: ellipsis;
+      }
+
+.example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }
+
+#border{
+  padding-top: 10px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    /* background-color:rgb(231, 227, 227,0.9); */
+    background-color: solid whitesmoke;
+    margin-left: -12%;
+    margin-right: 12%;
+    max-width: 100%;
+  transform: scale(1,1);
+  transition: transform 0.9sec ease-in;
+}
+
+
+#border{
+  padding-top: 10px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    /* background-color:rgb(231, 227, 227,0.9); */
+    background-color: solid whitesmoke;
+    margin-left: -12%;
+    margin-right: 12%;
+    max-width: 100%;
+    cursor :pointer;
+  transform: scale(1,1);
+  transition: transform 0.9sec ease-in;
+   }
+
+
+#border:hover{
+  padding-top: 10px;
+    border: 1px solid whitesmoke;
+    border-radius: 10px;
+    background-color: solid whitesmoke;
+    margin-left: -12%;
+    margin-right: 12%;
+    max-width: 100%;
+    cursor :pointer;
+  transform: scale(1.2,1.2);
+  transition: transform 0.9sec ease-out;
+   }
+
+   .space{
+  padding: 10px;
+}
+
+.descriptionclass {
+  width: 100%;
+  padding-left: 0px;
+  max-width: 500px;
+  min-width: 100px;
+  word-break: break-word;
+  max-height: 85px;
+  overflow: hidden;
+  -webkit-line-clamp:1;
+  -webkit-box-orient:vertical;
+  text-overflow: ellipsis;
+  line-height: 21px;
+  display: -webkit-box;
+ }
+ 
+.descriptionclass1 {
+  width: 100%;
+  padding-left: 0px;
+  max-width: 500px;
+  min-width: 100px;
+  word-break: break-word;
+  max-height: 85px;
+  overflow: hidden;
+  -webkit-line-clamp:1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-height: 21px;
+  display : block;
+  display: -webkit-box; 
+  text-align: justify;
+  position: relative;
+   }
+
+#butt{
+   padding-left: 7.5px;
+ }
+
+   @media screen and (max-width: 600px) {
+    #some {
+      max-width: 250px;
+      min-height: 30px;
+      /* max-height: px; */
+      text-overflow: ellipsis;
+    }
+  
+    #card{
+      min-height: 78px;
+    }
+    
+    #butt{
+       display:none;
+    }
+    
+    .descriptionclass {
+      width: 100%;
+      padding-left: 0px;
+      max-width: 500px;
+      min-width: 100px;
+      word-break: break-word;
+      max-height: 85px;
+      overflow: hidden;
+      -webkit-line-clamp:1;
+      -webkit-box-orient:vertical;
+      text-overflow: ellipsis;
+      line-height: 21px;
+      display: -webkit-box;
+     }
+     .descriptionclass1 {
+      width: 100%;
+      padding-left: 0px;
+      max-width: 500px;
+      min-width: 100px;
+      word-break: break-word;
+      max-height: 85px;
+      overflow: hidden;
+      -webkit-line-clamp:1;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      line-height: 21px;
+      display : block;
+      display: -webkit-box; 
+      text-align: justify;
+            }
+       .mediaquery{
+         width:304px;
+       }
+  }

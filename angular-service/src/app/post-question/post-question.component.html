@@ -1,0 +1,42 @@
+<br>
+
+<body>
+  <div id="division">
+    <form>
+      <div id="question">
+        <div class="form-group">
+          <br>
+          <br>
+          <label for="exampleInputEmail1">Question:</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" name="ques" [(ngModel)]="ques" aria-describedby="emailHelp"
+            placeholder="Enter your Question here" style="height: 40px;">
+        </div>
+      </div>
+    </form>
+    <div style="font-size: large;text-align: center;margin-top: 5%;"><strong><u>Click on the topics to which the question belongs:</u></strong></div>
+    <div class="badges">
+      <ul *ngFor="let val of topiclist" style="list-style-type: none;display: inline-block;padding: 0px;cursor: pointer;margin-top: 2%;">
+        <li><div class="chip">
+          <img src="../../assets/images/angular.png" alt="Person" width="96" height="96">
+          <span class="closebtn" onclick="this.parentElement.style.display='none'" (click)=addTopic(val.topic) id="smaller">{{val.topic}}  &times;</span>
+        </div>
+      </li>
+        </ul>
+    </div>
+    <div id="description">
+      <form>
+        <div class="form-group" style="margin-top: -8%;">
+          <label for="exampleFormControlTextarea1" style="font-size: 20px;text-align: center;">Enter the Description
+            here:</label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" rows="6"
+            placeholder="Enter desription in here" name="description" [(ngModel)]="description"></textarea>
+        </div>
+      </form>
+    </div>
+    <br>
+    <br>
+    <button type="button" id="butt" class="btn btn-dark btn-lg" (click)="postQuestion()">Post your Question!</button>
+  </div>
+  <br>
+  <br>
+</body>
